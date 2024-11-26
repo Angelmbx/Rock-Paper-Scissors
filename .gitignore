@@ -1,0 +1,84 @@
+# Byte-compiled files / __pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# pipenv
+*.lock
+pip-log.txt
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Pytest cache
+.pytest_cache/
+.cache
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyCharm IDE
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Profiling data
+*.prof
+*.log
+
+# Test artifacts
+.tox/
+.dist/
+.wheel/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Sphinx documentation
+docs/_build/
+
+# Packaging artifacts
+*.manifest
+*.spec
+dist/
+build/
+*.egg-info/
