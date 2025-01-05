@@ -1,6 +1,6 @@
 import random
 from constants import  GameAction, GameResult
-
+from history import update_user_history, predict_user_action
 
 def assess_game(user_action, computer_action):
 
@@ -41,8 +41,7 @@ def assess_game(user_action, computer_action):
 
 
 def get_computer_action():
-    computer_selection = random.randint(0, len(GameAction) - 1)
-    computer_action = GameAction(computer_selection)
+    computer_action = predict_user_action()
     print(f"Computer picked {computer_action.name}.")
 
     return computer_action
@@ -55,6 +54,9 @@ def get_user_action():
     user_selection = int(input(f"\nPick a choice ({game_choices_str}): "))
     user_action = GameAction(user_selection)
 
+    update_user_history(user_action)
+
+    
     return user_action
 
 
