@@ -1,25 +1,6 @@
 import random
-from enum import IntEnum
+from constants import  GameAction, GameResult
 
-
-class GameAction(IntEnum):
-
-    Rock = 0
-    Paper = 1
-    Scissors = 2
-
-
-class GameResult(IntEnum):
-    Victory = 0
-    Defeat = 1
-    Tie = 2
-
-
-Victories = {
-    GameAction.Rock: GameAction.Paper,
-    GameAction.Paper: GameAction.Scissors,
-    GameAction.Scissors: GameAction.Rock
-}
 
 def assess_game(user_action, computer_action):
 
