@@ -3,7 +3,7 @@ Práctica Agentes Inteligentes
 =============================
 En esta práctica se desarrollará y analizará el entorno, funcionamiento y estrategias de diseño implementadas en un agente inteligente diseñado para jugar al Piedra - papel - tijera construido en Python.
 
-## Tabla de propiedades del entorno
+## 1. Tabla de propiedades del entorno
 Contorno de tareas | Observable| Agentes | Determinista | Episódico | Estático | Discreto | Conocido
 :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
  RPS | Parcialmente | MultiAgente | No determinista | Secuencial | Estático |  Discreto |  Conocido |
@@ -23,3 +23,12 @@ Contorno de tareas | Observable| Agentes | Determinista | Episódico | Estático
 - _Discreto_: Las opciones disponibles (piedra, papel o tijera) son finitas y claramente definidas.
 
 - _Conocido_: El entorno es conocido porque las reglas del juego no varían y son conocidas por los jugadores.
+
+## 2. Identificación del tipo de agente y estructura
+El agente desarrollado es de tipo **agente basado en modelos** (Model-Based Reflex Agent). No se limita únicamente a reaccionar de manera simple al estado actual, sino que utiliza un modelo interno basado en el historial de elecciones del jugador para mejorar su toma de decisiones. Algunas de sus características principales son:
+
+- Memoria del entorno: Dado que el entorno es parcialmente observable, mantiene un registro del historial de acciones del jugador.
+
+- Predicción basada en el modelo: Analiza dicho historial (como la acción favorita del jugador o las transiciones entre elecciones) para intentar identificar patrones de comportamiento y anticiparse a las acciones del oponente.
+
+- Reacción adaptativa: Se adapta al modelo interno de cada oponente, con lo cual selecciona una acción que contrarreste la predicción más probable en cada caso.
