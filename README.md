@@ -32,3 +32,33 @@ El agente desarrollado es de tipo **agente basado en modelos** (Model-Based Refl
 - Predicción basada en el modelo: Analiza dicho historial (como la acción favorita del jugador o las transiciones entre elecciones) para intentar identificar patrones de comportamiento y anticiparse a las acciones del oponente.
 
 - Reacción adaptativa: Se adapta al modelo interno de cada oponente, con lo cual selecciona una acción que contrarreste la predicción más probable en cada caso.
+
+![Estructura del agente](img/agente.png)
+Explicación del gráfico: 
+
+- Entorno: es el usuario que interactúa con el agente. El usuario proporciona entradas (elección de piedra, papel o tijera) y recibe las salidas del agente (movimiento elegido y resultado de la partida). 
+
+- Agente: es el programa que recibe las entradas del usuario y toma la mejor decisión posible basándose en su modelo interno y las interacciones previas. 
+
+- Sensores: se encargan de que el agente perciba el estado actual del entorno. 
+    - Código relacionado en `main.py`
+    - `get_user_action()` obtiene la elección del usuario (piedra,papel o tijera)
+
+- ¿Cómo es el mundo ahora?: se corresponde con el estado interno del agente. El estado incluye tanto el historial de las elecciones del usuario como los patrones que el agente ha identificado. El agente utiliza este estado para interpretar el contexto actual.
+    - Código relacionado en `history.py`
+    - `user_history` almacena el historial completo de elecciones del usuario.
+    - `next_move` analiza las secuencias de elecciones del usuario, permitiendo al agente identificar patrones
+
+- Estado: se corresponde con la información almacenada sobre el historial del usuario y los patrones identificados. Este estado se actualiza dinámicamente con cada nueva interacción.
+    - Código relacionado en `history.py`
+    - `update_user_history()` actualiza el historial y las secuencias observadas.
+    - `predict_user_action()` utiliza el estado actual (historial y patrones) para predecir la próxima elección del usuario
+
+- ¿Elegir Piedra, Papel o Tijera?: representa la decisión del agente sobre qué acción tomar utilizando su predicción del próximo movimiento del usuario para elegir la acción que la contrarreste.
+    -  Código relacionado en `history.py`
+    - `predict_user_action()` Predice la próxima acción del usuario. También añade un factor de aleatoriedad para evitar que el usuario sea capaz de descifrar el patrón de comportamiento del agente.
+    - Código relacionado en `constants.py`
+    - `Victories` define las reglas para contrarrestar la predicción.
+
+- Actuadores: representan la acción elegida por el agente y su comunicación al entorno (el usuario). Esto incluye mostrar el resultado de cada ronda y actualizar el historial.
+    - Código relacionado en `main.py` y `game_logic.py` los `print()` statements comunican al usuario las decisiones del agente, su propia elección y el resultado del juego.
