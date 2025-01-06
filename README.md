@@ -65,3 +65,7 @@ Explicación del gráfico:
 
 - Actuadores: representan la acción elegida por el agente y su comunicación al entorno (el usuario). Esto incluye mostrar el resultado de cada ronda y actualizar el historial.
     - Código relacionado en `main.py` y `game_logic.py` los `print()` statements comunican al usuario las decisiones del agente, su propia elección y el resultado del juego.
+
+## Bibliografía
+
+Russell, Peter. ARTIFICIAL INTELLIGENCE : A Modern Approach, Global Edition. S.L., Pearson Education Limited, 2021.
