@@ -1,8 +1,11 @@
 
 Práctica Agentes Inteligentes
 =============================
-En esta práctica se desarrollará y analizará el entorno, funcionamiento y estrategias de diseño implementadas en un agente inteligente diseñado para jugar al Piedra - papel - tijera construido en Python.
 
+## 0. Introducción
+Este proyecto implementa un agente inteligente para jugar al juego de Piedra, Papel, Tijera, utilizando una estructura basada en modelos. El objetivo principal es crear un sistema capaz de aprender de las elecciones del usuario para detectar patrones y adapte su comportamiento para maximizar sus posibilidades de ganar.
+
+El lenguaje de programación elegido para desarrollar este agente es `Python`.
 ## 1. Tabla de propiedades del entorno
 Contorno de tareas | Observable| Agentes | Determinista | Episódico | Estático | Discreto | Conocido
 :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
